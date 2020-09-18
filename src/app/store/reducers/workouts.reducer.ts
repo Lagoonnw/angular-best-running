@@ -1,8 +1,9 @@
 import {createReducer, on, createSelector} from '@ngrx/store';
-import { setWorkouts }     from '../actions/workouts.action';
-import { AppState }        from './root.reducer';
+import { setWorkouts }                     from '../actions/workouts.action';
+import { AppState }                        from './root.reducer';
+import { Workout }                         from '../../models/Workout';
 
-export type WState = any[];
+export type WState = Workout[];
 
 const initialState: WState = [];
 

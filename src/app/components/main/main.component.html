@@ -6,19 +6,14 @@
 
       </th>
       <th>
-        <a class='dropdown-trigger btn' href='#' data-target='dropdown' #dropdown>Drop Me!</a>
-
-        <!-- Dropdown Structure -->
-        <ul id='dropdown' class='dropdown-content' >
-          <li><a href="#!">one</a></li>
-          <li><a href="#!">two</a></li>
-          <li class="divider" tabindex="-1"></li>
-          <li><a href="#!">three</a></li>
-          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-        </ul></th>
-      <th>Date</th>
-      <th>Distance</th>
+        <app-dropdown [options]="types" title="Type"></app-dropdown>
+      </th>
+      <th>
+        <app-dropdown [options]="dateTypes" title="Date"></app-dropdown>
+      </th>
+      <th>
+        <app-dropdown [options]="distanceTypes" title="Distance"></app-dropdown>
+      </th>
     </tr>
     </thead>
 
@@ -26,8 +21,8 @@
     <tr *ngFor="let w of workouts;let i = index">
       <td>{{ i + 1 }}</td>
       <td>{{w.workout_type}}</td>
-      <td>{{w.date}}</td>
-      <td>{{w.distance}}</td>
+      <td>{{w.getFormattedDate()}}</td>
+      <td>{{w.getDistance()}}</td>
     </tr>
     </tbody>
   </table>
